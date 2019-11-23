@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Convert to Date</title>
+    <style>
+      .canvas {
+        height: 500px;
+        width: 500px;
+        position: absolute;
+        top: 50px;
+        left: 50px;
+        background-color: aliceblue;
+      }
+      .rect1 {
+        height: 100px;
+        width: 300px;
+        position: absolute;
+        top: 50px;
+        left: 150px;
+        background-color: grey;
+      }
+      .rect2 {
+        height: 300px;
+        width: 100px;
+        position: absolute;
+        top: 150px;
+        left: 50px;
+        background-color: grey;
+      }
+      .rect3 {
+        height: 300px;
+        width: 100px;
+        position: absolute;
+        top: 150px;
+        left: 450px;
+        background-color: grey;
+      }
+      .rect4 {
+        width: 300px;
+        height: 100px;
+        position: absolute;
+        top: 450px;
+        left: 150px;
+        background-color: grey;
+      }
+      .sqr {
+        width: 100px;
+        height: 100px;
+        position: absolute;
+        top: 250px;
+        left: 250px;
+        background-color: hotpink;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="canvas"></div>
+    <div class="rect1"></div>
+    <div class="rect2"></div>
+    <div class="rect3"></div>
+    <div class="rect4"></div>
+    <div class="sqr"></div>
+    <script>
+      let a = window.document.getElementsByClassName("rect1");
+      let b = window.document.getElementsByClassName("rect2");
+      let c = window.document.getElementsByClassName("rect3");
+      let d = window.document.getElementsByClassName("rect4");
+      console.log("a: ", a);
+      a[0].onclick = () => {
+        // window.document.getElementsByClassName("sqr")[0].style.top =
+        //  window.document.getElementsByClassName("sqr")[0].style.top - "50px";
+        let change =
+          (
+            parseInt(
+              window.document
+                .getElementsByClassName("sqr")[0]
+                .style.top.replace("px", ""),
+              10
+            ) - 50
+          ).toString() + "px";
+        window.document.getElementsByClassName("sqr")[0].style.top = change;
+      };
+      b[0].onclick = () => {
+        let change =
+          (
+            parseInt(
+              window.document
+                .getElementsByClassName("sqr")[0]
+                .style.left.replace("px", ""),
+              10
+            ) - 50
+          ).toString() + "px";
+        window.document.getElementsByClassName("sqr")[0].style.left = change;
+      };
+      c[0].onclick = () => {
+        let change =
+          (
+            parseInt(
+              window.document
+                .getElementsByClassName("sqr")[0]
+                .style.left.replace("px", ""),
+              10
+            ) + 50
+          ).toString() + "px";
+        window.document.getElementsByClassName("sqr")[0].style.left = change;
+      };
+      d[0].onclick = () => {
+        let change =
+          (
+            parseInt(
+              window.document
+                .getElementsByClassName("sqr")[0]
+                .style.top.replace("px", ""),
+              10
+            ) + 50
+          ).toString() + "px";
+        window.document.getElementsByClassName("sqr")[0].style.top = change;
+      };
+    </script>
+  </body>
+</html>
